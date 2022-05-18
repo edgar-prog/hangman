@@ -1,0 +1,86 @@
+.buitre {
+	height: 256px;
+	width: 160px;
+	background-image: url(../img/buitre.png);
+	margin: 0 auto;
+	animation: ave 1s steps(3) infinite;
+}
+
+@keyframes ave{
+	0% {
+		zoom:0.4;
+		background-position: 0px;
+	}
+	
+ 	100% {
+		zoom:0.4;
+		background-position: -1200px;
+	}
+}
+
+.hangman {
+	height: 800px;
+	width: 480px;
+	background-image: url(../img/hangman.png);
+	margin: 0 auto;
+	animation: man 10s steps(14) infinite;
+}
+
+@keyframes man{
+	0% {
+		/* zoom:0.4; */
+		background-position: 0px;
+	}
+	
+ 	100% {
+		/* zoom:0.4; */
+		background-position: -6720px;
+	}
+}
+
+/* ----------------------------------- */
+html {
+	height:100%;
+	width: 100%;
+}
+
+body {
+	font-size: 1em;
+	line-height: 1.5em;
+	height:100%;
+	width: 100%;
+}
+
+.div-master {
+	height: 100%;
+	display: grid;
+	gap: 2%;
+	grid-template-rows: 60% 30%;
+}
+
+.div-canvas {
+	height: 100%;
+	background: orange;
+}
+
+.div-teclado {
+	border: solid 1px black;
+	justify-content: center;
+}
+
+#alfabeto {
+  margin:15px auto;
+  padding:0;
+  max-width: 625px;
+}
+
+#alfabeto li {
+  float:left;
+  width:35px;
+  height:30px;
+  text-align:center;
+  cursor:pointer;
+  margin: 0 10px 10px 0;
+  padding-top:10px;
+  border: solid 1px black;
+}
