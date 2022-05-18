@@ -1,5 +1,4 @@
-﻿
-	
+﻿	
 var alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -11,7 +10,7 @@ for (var i = 0; i < alfabeto.length; i++) {
 	letras.id = "alfabeto";
 	lista = document.createElement("li");
 	lista.id = "letra";
-	lista.innerHTML = alfabeto[i];
+	lista.innerHTML = "<b>"+alfabeto[i]+"</b>";
 	div.appendChild(letras);
 	letras.appendChild(lista);
 }

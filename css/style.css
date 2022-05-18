@@ -46,12 +46,14 @@ html {
 
 body {
 	font-size: 1em;
+	font-family: 'Jura', sans-serif;
 	line-height: 1.5em;
 	height:100%;
 	width: 100%;
 }
 
 .div-master {
+	background: #BE86E5;
 	height: 100%;
 	display: grid;
 	gap: 2%;
@@ -60,7 +62,14 @@ body {
 
 .div-canvas {
 	height: 100%;
-	background: orange;
+	padding: 0;
+    margin: auto;
+	background: #E2D0B1;
+	background-image: url(../img/fondo.png);
+}
+
+#screen {
+	border: 2px solid black;
 }
 
 .div-teclado {
@@ -69,18 +78,18 @@ body {
 }
 
 #alfabeto {
-  margin:15px auto;
-  padding:0;
+  margin: 15px auto;
+  padding: 0;
   max-width: 625px;
 }
 
 #alfabeto li {
-  float:left;
-  width:35px;
-  height:30px;
-  text-align:center;
-  cursor:pointer;
+  float: left;
+  width: 35px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
   margin: 0 10px 10px 0;
-  padding-top:10px;
+  padding-top: 10px;
   border: solid 1px black;
 }
