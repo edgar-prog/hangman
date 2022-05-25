@@ -11,7 +11,6 @@ var adivina = document.createElement("ul");
 for (var i = 0; i < palabra.length; i++) {
 	adivina.id = "espacios";
 	espacio = document.createElement("li");
-	/* espacio.id = "letra"; */
 	espacio.innerHTML = "_";
 	div_visor.appendChild(adivina);
 	adivina.appendChild(espacio);
@@ -23,7 +22,6 @@ var letras = document.createElement("ul");
 for (var i = 0; i < alfabeto.length; i++) {
 	letras.id = "alfabeto";
 	lista = document.createElement("li");
-	lista.id = "letra";
 	lista.innerHTML = "<b>"+alfabeto[i]+"</b>";
 	div_teclas.appendChild(letras);
 	letras.appendChild(lista);

@@ -1,0 +1,92 @@
+html {
+	height:100%;
+	width: 100%;
+	
+}
+
+body {
+	height:100%;
+	width: 100%;
+	font-size: 1em;
+	font-family: 'Jura', sans-serif;
+	line-height: 1.5em;
+	background: #E5E5E5;
+ 	display: grid;
+	row-gap: 2%;
+	grid-template-rows: 10% 60% 10%; 
+}
+
+.logo {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 40px;
+	position: absolute;
+	width: 120px;
+	height: 48px;
+	left: 40px;
+	top: 40px;	
+}
+
+
+.div-banner {
+	
+}
+
+.div-section-one {
+	height: 100%;
+	padding: 5%;
+	background: red;
+}
+
+.div-section-two {
+	height: 90%;
+	padding: 5%;
+	background: green;
+}
+
+#lista-palabras {
+	padding: 2%;
+	counter-reset: li;
+	column-count: 4;
+	column-gap: 10%;
+}
+ 
+#lista-palabras li{
+	list-style: none;
+	font-family: 'Skranji', cursive;
+	position: relative;
+	font-size: 1.5rem;
+	padding: 10px;
+	margin-bottom: 30px;
+    width: 115px; 
+    height: 20px; 
+}
+
+#lista-palabras > li:before {
+  counter-increment: li;
+  content: counter(li);
+  display: inline-block;
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-35%);
+  padding: 5px;
+  color: blue;
+  font-size: 1em;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  border: 3px solid #000;
+}
+
+#lista-palabras li:hover { 
+    transform:rotate(-3deg); 
+    box-shadow:5px 5px 5px #000000;
+    transform:rotate(3deg); 
+	box-shadow: 5px 5px 5px #000000; 
+    margin-left: 20px;
+}
+
