@@ -10,7 +10,7 @@ for (var k = 0; k < palabrasAdivinar.length; k++) {
 }	
 
 
-var botonAdicionar = document.getElementById("agregar-palabra");
+var botonAdicionar = document.getElementById("btn-agregar");
 
 botonAdicionar.addEventListener("click",function(event){
 	event.preventDefault();

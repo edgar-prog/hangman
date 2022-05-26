@@ -13,8 +13,26 @@ body {
 	background: #E5E5E5;
  	display: grid;
 	row-gap: 2%;
-	grid-template-rows: 10% 60% 10%; 
+	grid-template-rows: 12% 60% 21%; 
 }
+
+.div-banner {
+	background: blue;	
+}
+
+.div-section-one {
+	padding: 2% 5% 2% 10%;
+	background: red;
+}
+
+.div-section-two {
+	padding: 1%;
+	background: green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 
 .logo {
 	display: flex;
@@ -30,32 +48,16 @@ body {
 }
 
 
-.div-banner {
-	background: blue;	
-}
-
-.div-section-one {
-	/* height: 100%; */
-	padding: 5%;
-	background: red;
-}
-
-.div-section-two {
-	height: 100%;
-	padding: 1%;
-	background: green;
-}
-
 #lista-palabras {
-/* 	padding: 2%; */
 	counter-reset: li;
 	flex-direction: row;
 	column-count: 4;
 	column-gap: 10%;
-	/* column-width: 200px; */
+	border: 2px solid #f9f9f9;
 }
  
 #lista-palabras li{
+	border: 2px solid #f9f9f9;
 	break-inside: avoid-column;
 	page-break-inside: avoid;
 	list-style: none;
@@ -78,7 +80,7 @@ body {
   transform: translateY(-40%);
   padding: 5px;
   color: blue;
-  font-size: 1em;
+  font-size: 0.5em;
   width: 20px;
   height: 20px;
   text-align: center;
@@ -91,6 +93,40 @@ body {
     box-shadow:5px 5px 5px #000000;
     transform:rotate(3deg); 
 	box-shadow: 5px 5px 5px #000000; 
-    margin-left: 20px;
 }
 
+#btn-agregar {
+	width: 100%;
+	font-family: 'Russo One', sans-serif;
+	font-size: 1.5em;
+	text-align: center;
+	border-radius: 5px;
+	background: #0A3871;
+	color: white;
+	cursor: pointer;
+	background-color: #0A3871;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#btn-cancel {
+	width: 100%;
+	font-family: 'Russo One', sans-serif;
+	font-size: 1.5em;
+	text-align: center;
+	border-radius: 5px;
+	background: #0A3871;
+	color: white;
+	cursor: pointer;
+	background-color: #0A3871;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#palabra {
+	width: 90%;
+	outline: none;
+	border: 0;
+	font-size: 1.5em;
+	border-radius: 5px;
+	background-color: #def;
+	padding: 5px;
+}
