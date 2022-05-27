@@ -81,8 +81,8 @@ body {
 	display: inline-block;
 	position: absolute;
 	left: -50px;
-	top: 50%;
-	transform: translateY(-44%);
+	top: 59%;
+	transform: translateY(-40%);
 	padding: 12px;
 	color: #0A3871;
 	font-size: 1em;
@@ -114,6 +114,15 @@ body {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+.btn-add:hover {
+   position: relative;
+   top: 2px;
+   left: 2px;
+   border-color: #0A3871;
+   cursor: pointer;
+}
+
+
 .btn-cancel {
 	margin: 1%;
 	font-family: 'Russo One', sans-serif;
@@ -127,6 +136,15 @@ body {
 	background-color: #0A3871;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+.btn-cancel:hover {
+   position: relative;
+   top: 2px;
+   left: 2px;
+   border-color: #0A3871;
+   cursor: pointer;
+}
+
 
 #palabra {
 	margin: 1%;
