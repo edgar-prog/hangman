@@ -10,16 +10,20 @@
 		<div class="div-banner">
 			<img class="logo" src="img/logo.png" >
 		</div>
-		<div class="div-section-one">
+		<div class="div-lista">
 			<ol id="lista-palabras">
 			</ol>
 		</div>
-		<div class="div-section-two">
+		<div class="div-form">
 			<form  id="form-agregar">
-				<label>No mayor de 8 caracteres y tildes</label><br>
-				<input type="text" id="palabra" placeholder="Nueva palabra"><br>
-				<button type="button" id="btn-agregar">Guardar y empezar</button>
-				<button type="button" id="btn-cancel">Cancel</button>
+				<div class="div-form-input">
+					<label>Máx. 8 letras</label><br>
+					<input type="text" id="palabra" placeholder="Nueva palabra">
+				</div>
+				<div class="div-form-btn">
+					<button type="button" class="btn-add">Guardar y empezar</button>
+					<button type="button" class="btn-cancel">Cancel</button>
+				</div>
 			</form>
 		</div>
 		<script src="js/save.js"> </script>

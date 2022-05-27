@@ -9,7 +9,7 @@ body {
 	width: 100%;
 	font-size: 1em;
 	font-family: 'Jura', sans-serif;
-	line-height: 1.5em;
+	/* line-height: 1.5em; */
 	background: #E5E5E5;
  	display: grid;
 	row-gap: 2%;
@@ -17,20 +17,27 @@ body {
 }
 
 .div-banner {
-	background: blue;	
+	
 }
 
-.div-section-one {
+.div-lista {
 	padding: 2% 5% 2% 10%;
-	background: red;
 }
 
-.div-section-two {
+.div-form {
+	height: 90%;
 	padding: 1%;
-	background: green;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+	grid-template-rows: 50% 50%;
+	text-align: center;
+}
+
+.div-form-input {
+	height: 95%;
+}
+
+.div-form-btn {
+	height: 95%;
 }
 
 
@@ -53,11 +60,9 @@ body {
 	flex-direction: row;
 	column-count: 4;
 	column-gap: 10%;
-	border: 2px solid #f9f9f9;
 }
  
 #lista-palabras li{
-	border: 2px solid #f9f9f9;
 	break-inside: avoid-column;
 	page-break-inside: avoid;
 	list-style: none;
@@ -65,27 +70,27 @@ body {
 	position: relative;
 	font-size: 1.5em;
 	padding: 10px;
-	margin-bottom: 25px;
+	margin-bottom: 65px;
     width: 120px; 
     height: 20px; 
 }
 
 #lista-palabras > li:before {
-  counter-increment: li;
-  content: counter(li);
-  display: inline-block;
-  position: absolute;
-  left: -50px;
-  top: 50%;
-  transform: translateY(-40%);
-  padding: 5px;
-  color: blue;
-  font-size: 0.5em;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  border-radius: 50%;
-  border: 2px solid #000;
+	counter-increment: li;
+	content: counter(li);
+	display: inline-block;
+	position: absolute;
+	left: -50px;
+	top: 50%;
+	transform: translateY(-44%);
+	padding: 12px;
+	color: #0A3871;
+	font-size: 1em;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid #000;
 }
 
 #lista-palabras li:hover { 
@@ -95,26 +100,28 @@ body {
 	box-shadow: 5px 5px 5px #000000; 
 }
 
-#btn-agregar {
-	width: 100%;
+.btn-add {
+	margin: 1%;
 	font-family: 'Russo One', sans-serif;
 	font-size: 1.5em;
 	text-align: center;
-	border-radius: 5px;
+	border-radius: 10px;
 	background: #0A3871;
+	width: 25%;
 	color: white;
 	cursor: pointer;
 	background-color: #0A3871;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-#btn-cancel {
-	width: 100%;
+.btn-cancel {
+	margin: 1%;
 	font-family: 'Russo One', sans-serif;
 	font-size: 1.5em;
 	text-align: center;
-	border-radius: 5px;
+	border-radius: 10px;
 	background: #0A3871;
+	width: 25%;
 	color: white;
 	cursor: pointer;
 	background-color: #0A3871;
@@ -122,11 +129,12 @@ body {
 }
 
 #palabra {
-	width: 90%;
+	margin: 1%;
+	width: 25%;
 	outline: none;
 	border: 0;
 	font-size: 1.5em;
-	border-radius: 5px;
+	border-radius: 10px;
 	background-color: #def;
-	padding: 5px;
 }
+

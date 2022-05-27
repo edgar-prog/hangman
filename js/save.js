@@ -1,5 +1,5 @@
 
-var palabrasAdivinar = ["MANZANA","PERFUME","ARBOL","HIELO","ROBOT","ZAPATO","EDIFICIO","MESA","SILLA","CEBOLLA","OELDA"];
+var palabrasAdivinar = ["MANZANA","PERFUME","ARBOL","HIELO","ROBOT","ZAPATO","EDIFICIO","MESA","SILLA","CEBOLLA"];
 
 var listaPalabras = document.getElementById("lista-palabras");
 	
@@ -10,12 +10,13 @@ for (var k = 0; k < palabrasAdivinar.length; k++) {
 }	
 
 
-var botonAdicionar = document.getElementById("btn-agregar");
+var botonAdicionar = document.querySelector(".btn-add");
 
 botonAdicionar.addEventListener("click",function(event){
 	event.preventDefault();
-	var nuevaPalabra = document.getElementById("palabra").value;
+	var nuevaPalabra = document.getElementById("palabra");
 	nuevoItem = document.createElement("li");
-	nuevoItem.innerHTML = nuevaPalabra;
+	nuevoItem.innerHTML = nuevaPalabra.value;
 	listaPalabras.appendChild(nuevoItem);
+	
 });
