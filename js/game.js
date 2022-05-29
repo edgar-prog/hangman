@@ -28,15 +28,14 @@ function dibujarBuitre() {
 	}
 }
 
-var step2 = 0;
-function dibujarHangman() {
+/* var step2 = 0; step++*/
+function dibujarHangman(step2) {
 	ctx.clearRect(250,250,192,192); 
 	ctx.drawImage(soga, 0, 0, 92, 136, 315, 200, 83, 122);
-	ctx.drawImage(hangman, (step2++ % 7) * 270, 0, 270, 270, 250, 250, 192, 192); 
+	ctx.drawImage(hangman, (step2 % 7) * 270, 0, 270, 270, 250, 250, 192, 192); 
 	if(step2 > 7) {
 		step2 = 0;
 	}
 }
 
 setInterval(dibujarBuitre, 1000/3);
-setInterval(dibujarHangman, 6000/7); 
