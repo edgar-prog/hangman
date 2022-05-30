@@ -69,15 +69,24 @@ teclado.addEventListener("click",function(event) {
 				elemento.innerHTML = tecla;
 				let posicion = posicionesLetras[j];
 				
-				//reemplazo del la letra por el "_"
+				//reemplazo del "_" por la letra
 				espaciosVacios.replaceChild(elemento,espaciosVacios.children[posicion]);
 			}
+			
+			for(let k = 0; k < palabra.length; k++) {
+				if(espaciosVacios.children[k].textContent != "_") {
+					mostrarSpech(8);
+				}
+			}
+			
 		}
 		// si la letra no esta en palabra se incrementa el contador de intentos fallidos
 		else {
-			numeroIntentosFallidos++;
+			
 			dibujarHangman(numeroIntentosFallidos);
-			console.log(numeroIntentosFallidos);
+			if(numeroIntentosFallidos == 6)
+				mostrarSpech(numeroIntentosFallidos);
+			numeroIntentosFallidos++;
 		}		
 	}
 	else

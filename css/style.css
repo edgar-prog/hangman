@@ -46,7 +46,8 @@ html {
 
 body {
 	font-size: 1em;
-	font-family: 'Jura', sans-serif;
+	
+	
 	line-height: 1.5em;
 	height:100%;
 	width: 100%;
@@ -61,6 +62,7 @@ body {
 }
 
 .div-canvas {
+	font-family: 'Henny Penny', cursive;
 	padding: 0;
     margin: auto;
 	border: 1px solid black;
@@ -69,6 +71,7 @@ body {
 }
 
 .div-teclado {
+	font-family: 'Jura', sans-serif;
 	height:100%;
 	background: green;
 	row-gap: 10%;
