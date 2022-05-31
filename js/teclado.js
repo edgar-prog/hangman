@@ -10,6 +10,7 @@ let palabrasMemoria = JSON.parse(localStorage.getItem("palabrasAdivinar"));
 
 var teclasPresionadas = [];
 var numeroIntentosFallidos = 0;
+var juegoTerminado = false;
 
 	if(palabrasMemoria != null) {
 		var palabra = generarPalabra(palabrasMemoria);
@@ -52,7 +53,7 @@ teclado.addEventListener("click",function(event) {
 	let tecla = event.target.textContent;
 	
 	//Verificar si la tecla ya fue presionada con anterioridad 
-	if(!teclasPresionadas.includes(tecla)) {
+	if(!teclasPresionadas.includes(tecla) && !juegoTerminado) {
 		
 		//Si es presionada por primera vez se guarda en el arreglo
 		teclasPresionadas.push(tecla);
@@ -72,25 +73,24 @@ teclado.addEventListener("click",function(event) {
 				//reemplazo del "_" por la letra
 				espaciosVacios.replaceChild(elemento,espaciosVacios.children[posicion]);
 			}
-			
-			for(let k = 0; k < palabra.length; k++) {
-				if(espaciosVacios.children[k].textContent != "_") {
-					mostrarSpech(8);
-				}
+			//Verifica que no hay mas letras ocultas a mostrar
+			if(!validarPalabra(palabra)){
+				mostrarSpech(8);
+				juegoTerminado = true;
 			}
-			
 		}
 		// si la letra no esta en palabra se incrementa el contador de intentos fallidos
 		else {
-			
+			//Verifica los intentos fallidos
 			dibujarHangman(numeroIntentosFallidos);
-			if(numeroIntentosFallidos == 6)
+			//Si es el ultimo intento muestra mensaje y termina el juego
+			if(numeroIntentosFallidos == 6) {
 				mostrarSpech(numeroIntentosFallidos);
+				juegoTerminado = true;
+			}
 			numeroIntentosFallidos++;
 		}		
 	}
-	else
-		console.log("letra repetida");
 });
 
 //Funcion que busca la letra en la palabra y guarda su posicion en la cadena
@@ -114,3 +114,14 @@ function generarPalabra(listaPalabrasAdivinar) {
 	return listaPalabrasAdivinar[indice];
 }
 
+
+function validarPalabra(palabra) {
+	let hayGuiones = false;
+	let espaciosVacios = document.getElementById("espacios");
+	for(let k = 0; k < palabra.length; k++) {
+		if(espaciosVacios.children[k].textContent == "_") {
+			hayGuiones = true;
+		}
+	}
+	return hayGuiones;
+}

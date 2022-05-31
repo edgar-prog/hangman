@@ -56,10 +56,6 @@ function dibujarHangman(step) {
 	if(step > 0){
 		ctx.drawImage(hangman, (step-- % 7) * 270, 0, 270, 270, 250, 250, 192, 192); 
 	}
-	
-	if(step > 7) {
-		step = 0;
-	}
 }
 
 setInterval(dibujarBuitre, 1000/3);

@@ -1,44 +1,3 @@
-.buitre {
-	height: 256px;
-	width: 160px;
-	background-image: url(../img/buitre.png);
-	margin: 0 auto;
-	animation: ave 1s steps(3) infinite;
-}
-
-@keyframes ave{
-	0% {
-		zoom:0.4;
-		background-position: 0px;
-	}
-	
- 	100% {
-		zoom:0.4;
-		background-position: -1200px;
-	}
-}
-
-.hangman {
-	height: 800px;
-	width: 480px;
-	background-image: url(../img/hangman.png);
-	margin: 0 auto;
-	animation: man 10s steps(14) infinite;
-}
-
-@keyframes man{
-	0% {
-		/* zoom:0.4; */
-		background-position: 0px;
-	}
-	
- 	100% {
-		/* zoom:0.4; */
-		background-position: -6720px;
-	}
-}
-
-/* ----------------------------------- */
 html {
 	height:100%;
 	width: 100%;
@@ -46,48 +5,42 @@ html {
 
 body {
 	font-size: 1em;
-	
-	
 	line-height: 1.5em;
 	height:100%;
 	width: 100%;
 }
 
 .div-master {
-	background: #BE86E5;
+	background: #E5E5E5;
 	height: 100%;
 	display: grid;
-	row-gap: 2%;
-	grid-template-rows: 65% 33%;
+	grid-template-rows: 62% 30% 8%;
 }
 
 .div-canvas {
 	font-family: 'Henny Penny', cursive;
 	padding: 0;
     margin: auto;
-	border: 1px solid black;
-	background: #E2D0B1;
 	background-image: url(../img/fondo.png);
 }
 
 .div-teclado {
 	font-family: 'Jura', sans-serif;
-	height:100%;
-	background: green;
-	row-gap: 10%;
-    grid-template-rows: 45% 45%;
+	height:80%;
 	justify-content: center;
 	align-items: center;
 }
 
+.div-btn {
+	text-align: center;
+}
+
 .div-visor {
-	height: 49%;
-	border: 1px solid black;
+	
 }
 
 .div-teclas {
-	height: 49%;
-	border: 1px solid black;
+	
 }
 
 #alfabeto {
@@ -96,9 +49,7 @@ body {
 	max-width:900px;
 }
 
-
 #alfabeto li {
-  /* display: inline-block; */
   float: left;
   margin: 0 5px 5px 0;
   width: 40px;
@@ -106,10 +57,8 @@ body {
   line-height: 40px;
   text-align: center;
   background: #fff;
-  border: 2px solid #f9f9f9;
   border-radius: 10px;
 }
-
 
 #alfabeto li:hover {
    position: relative;
@@ -134,11 +83,30 @@ body {
   line-height: 40px;
   text-align: center;
   background: #fff;
-  border: 2px solid #f9f9f9;
   border-radius: 10px;
 }
 
+.btn {
+	margin: 1%;
+	font-family: 'Russo One', sans-serif;
+	font-size: 1.5em;
+	text-align: center;
+	border-radius: 10px;
+	background: #0A3871;
+	width: 25%;
+	color: white;
+	cursor: pointer;
+	background-color: #0A3871;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
+.btn:hover {
+   position: relative;
+   top: 2px;
+   left: 2px;
+   border-color: #0A3871;
+   cursor: pointer;
+}
 
 
 
