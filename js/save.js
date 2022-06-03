@@ -2,28 +2,25 @@
 
 //varaiables globales
 
-var palabrasAdivinar = ["MANZANA","HIELO","ROBOT","ZAPATO","EDIFICIO","MESA","SILLA","CEBOLLA"];
+let palabrasMemoria = JSON.parse(localStorage.getItem("palabrasAdivinar"));
+var palabrasAdivinar = [];
+
+
+if(palabrasMemoria != null) {
+	var palabrasAdivinar = palabrasMemoria;
+}
 
 var listaPalabras = document.getElementById("lista-palabras");
-var botonAdicionar = document.querySelector(".btn-add");
-
-
-//Funcion actualiza el arreglo de palabras y las muestra en la pagina
-window.onload = function() {
-	let palabrasMemoria = JSON.parse(localStorage.getItem("palabrasAdivinar"));
-	if(palabrasMemoria != null) {
-	   //actualizar variable con el contenido de localStorag
-		indiceMemoria = palabrasMemoria.length - 1;
-		palabrasAdivinar.push(palabrasMemoria[indiceMemoria]);
-	}
 	
-	//Genera la tabla nmumerada de las palabras que estan ingresadas al juego
-	for (var k = 0; k < palabrasAdivinar.length; k++) {
-		nuevoItem = document.createElement("li");
-		nuevoItem.innerHTML = palabrasAdivinar[k];
-		listaPalabras.appendChild(nuevoItem);
-	}	
-}
+//Genera la tabla nmumerada de las palabras que estan ingresadas al juego
+for (let k = 0; k < palabrasAdivinar.length; k++) {
+	nuevoItem = document.createElement("li");
+	nuevoItem.innerHTML = palabrasAdivinar[k];
+	listaPalabras.appendChild(nuevoItem);
+}	
+
+
+var botonAdicionar = document.querySelector(".btn-add");
 
 //Funcion que agrega la palabra y verifica que cumpla los requesitos
 botonAdicionar.addEventListener("click",function(event){
@@ -46,6 +43,7 @@ botonAdicionar.addEventListener("click",function(event){
 			
 			//se guarda en localStorage la nueva palabra y se redirije a la pagina juego
 			localStorage.setItem("palabrasAdivinar",JSON.stringify(palabrasAdivinar));
+						
 			window.location="juego.html";
 		}
 		else {
@@ -59,6 +57,26 @@ botonAdicionar.addEventListener("click",function(event){
 	document.getElementById("palabra").value = "";
 });
 
+//Funcion doble click para eliminar un item en la lista
+listaPalabras.addEventListener("dblclick",function(event) {
+	//Seleccion del item de la lista
+	let itemBorrar = event.target.textContent;
+	
+	if(palabrasAdivinar.length != 1) {
+		//Se elimina del array de palabras en memoria
+		borrarItemLista(palabrasAdivinar, itemBorrar);
+		//Se actualiza la lista de palabras en el localStorage
+		localStorage.setItem("palabrasAdivinar",JSON.stringify(palabrasAdivinar));
+		//Se elimina el item de la lista en HTML
+		this.removeChild(event.target); 
+	}
+	else {
+		alert("Debe tener al menos una palabra que adivinar");
+	}
+	
+});
+
+
 //Funcion que verifica solo texto sin tildes, numeros u otro signo de puntuacion
 function verificarTexto(verificar) {
 	var regex = /^[a-zA-Z]+$/;
@@ -70,3 +88,12 @@ function verificarTexto(verificar) {
 		return true;
 }
 
+//Funcion borrar una palabra de la lista
+function borrarItemLista ( arr, item ) {
+	// Obtiene el indice de la palabra en el array
+    let indiceItem = arr.indexOf( item );
+	//Verifica que este en el array
+    if ( indiceItem !== -1 ) {
+        arr.splice( indiceItem , 1 );
+    }
+}

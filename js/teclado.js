@@ -1,25 +1,19 @@
 ﻿
 //variables globales
+	let palabrasMemoria = JSON.parse(localStorage.getItem("palabrasAdivinar"));
 	
-let alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+	if(palabrasMemoria != null) {
+		var palabrasAdivinar = palabrasMemoria;
+		var palabra = generarPalabra(palabrasMemoria);
+	}
+		
+	let alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
         'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
         'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-let palabrasAdivinar = ["MANZANA","HIELO","ROBOT","ZAPATO","EDIFICIO","MESA","SILLA","CEBOLLA"];
-let palabrasMemoria = JSON.parse(localStorage.getItem("palabrasAdivinar"));
-
-var teclasPresionadas = [];
-var numeroIntentosFallidos = 0;
-var juegoTerminado = false;
-
-	if(palabrasMemoria != null) {
-		var palabra = generarPalabra(palabrasMemoria);
-	}
-	else {
-		var palabra = generarPalabra(palabrasAdivinar);
-	}
-
-
+	var teclasPresionadas = [];
+	var numeroIntentosFallidos = 0;
+	var juegoTerminado = false;
 
 	let div_visor = document.querySelector(".div-visor");
 	let adivina = document.createElement("ul");
@@ -41,7 +35,7 @@ var juegoTerminado = false;
 		letras.appendChild(lista);
 	}
 
-var teclado = document.getElementById("alfabeto");
+	var teclado = document.getElementById("alfabeto");
 
 //Funcion que lee el evento click en el teclado grafico
 teclado.addEventListener("click",function(event) {
@@ -75,7 +69,8 @@ teclado.addEventListener("click",function(event) {
 			}
 			//Verifica que no hay mas letras ocultas a mostrar
 			if(!validarPalabra(palabra)){
-				mostrarSpech(8);
+				mostrarSpech(8, "");
+				
 				juegoTerminado = true;
 			}
 		}
@@ -85,7 +80,8 @@ teclado.addEventListener("click",function(event) {
 			dibujarHangman(numeroIntentosFallidos);
 			//Si es el ultimo intento muestra mensaje y termina el juego
 			if(numeroIntentosFallidos == 6) {
-				mostrarSpech(numeroIntentosFallidos);
+				mostrarSpech(6, palabra);
+				setTimeout(mostrarSpech, 1700, 7, palabra);
 				juegoTerminado = true;
 			}
 			numeroIntentosFallidos++;

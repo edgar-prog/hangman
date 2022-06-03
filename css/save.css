@@ -9,7 +9,7 @@ body {
 	width: 100%;
 	font-size: 1em;
 	font-family: 'Jura', sans-serif;
-	/* line-height: 1.5em; */
+	line-height: 1.5em;
 	background: #E5E5E5;
  	display: grid;
 	row-gap: 2%;
@@ -73,24 +73,6 @@ body {
 	margin-bottom: 65px;
     width: 120px; 
     height: 20px; 
-}
-
-#lista-palabras > li:before {
-	counter-increment: li;
-	content: counter(li);
-	display: inline-block;
-	position: absolute;
-	left: -50px;
-	top: 59%;
-	transform: translateY(-40%);
-	padding: 12px;
-	color: #0A3871;
-	font-size: 1em;
-	width: 20px;
-	height: 20px;
-	text-align: center;
-	border-radius: 50%;
-	border: 1px solid #000;
 }
 
 #lista-palabras li:hover { 

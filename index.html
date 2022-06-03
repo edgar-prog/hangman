@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Page Title</title>
+		<title>Hangman</title>
 		<link rel="stylesheet" href="css/reset.css">
 		<link href="https://fonts.googleapis.com/css2?family=Macondo&family=Russo+One&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/index.css">
@@ -12,5 +12,14 @@
 		<button class="button button1">Iniciar Juego</button> </a>
 		<a href="save.html">
 		<button class="button button2">Agregar Palabra</button></a>
+		
+		<script>
+			let palabrasAdivinar = ["MANZANA","HIELO","ROBOT","ZAPATO","EDIFICIO","SILLA","CEBOLLA"];
+			let palabrasMemoria = JSON.parse(localStorage.getItem("palabrasAdivinar"));
+			if(palabrasMemoria == null) {
+				localStorage.setItem("palabrasAdivinar",JSON.stringify(palabrasAdivinar));
+			}
+		</script>
+		
 	</body>
 </html>
