@@ -25,7 +25,7 @@ var bandera = false;
 
 function dibujarBuitre() {
 	ctx.clearRect(550,150,81,129);
-	ctx.drawImage(arbol, 0, 0, 418, 436, 90, 115, 376, 392);
+	ctx.drawImage(arbol, 0, 0, 440, 460, 40, 125, 376, 392);
 	ctx.drawImage(buitre, (step1++ % 3) * 108, 0, 108, 172, 550, 150, 81, 129); 
 	if(step1 > 2) {
 		step1 = 0;
@@ -56,18 +56,18 @@ function mostrarSpech(step,texto) {
 }
 
 function dibujarHangman(step) {
-	ctx.clearRect(250,250,192,192); 
-	ctx.drawImage(soga, 0, 0, 92, 136, 315, 200, 83, 122);
+	ctx.clearRect(275,250,192,192); 
+	ctx.drawImage(soga, 0, 0, 92, 136, 340, 215, 83, 122);
 	if(step > 0){
-		ctx.drawImage(hangman, (step-- % 7) * 270, 0, 270, 270, 250, 250, 192, 192); 
+		ctx.drawImage(hangman, (step-- % 7) * 270, 0, 270, 270, 275, 250, 192, 192); 
 	}
 }
 
 
 function mostrarTeclasPresionadas(texto) {
 	ctx.clearRect(0,canvas.height - 20, canvas.width, canvas.height);
-	ctx.fillStyle = "black";
-	ctx.font="12pt 'Jura', sans-serif";
+	ctx.fillStyle = "#469E27";
+	ctx.font="16pt 'Ewert', cursive";
 	ctx.fillText(texto,x,canvas.height - 5);
 	if(x > (canvas.width - Math.round(ctx.measureText(texto).width))) {
 		bandera = true;
